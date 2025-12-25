@@ -5,12 +5,91 @@
 }
 
 body {
+    background-color: #f8f9fd;
   font-family: 'Roboto', sans-serif;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
   overflow: hidden;
   margin: 0;
 }
+
+.container{
+    border-radius: 5px;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+    overflow: hidden;
+    width:300px;
+
+}
+
+.title{
+    margin:0
+}
+
+.subtitle{
+    display : inline-block;
+    margin : 5px 0px 20px;
+    opacity : 0.8;
+}
+
+.header{
+    background-color: rgb(1, 140, 240);
+    color:white;
+    padding : 20px 20px
+}
+
+.header input{
+    color:white;
+    border: 0;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 20px;
+    padding: 10px 18px;
+    width: 100%;
+    font-size: 14px;
+}
+.header input:focus{
+    outline:none;
+}
+
+.user-list{
+    padding: 0;
+    margin :0;
+    list-style-type: none;
+    max-height: 500px;
+    overflow-y: auto;
+
+}
+
+.user-list li{
+    display : flex;
+    padding: 20px
+}
+
+.user-list img{
+    border-radius: 25%;
+    object-fit: cover;
+    height: 50px;
+    width:50px;
+}
+
+.user-list .user-info {
+    margin-left :10px 
+}
+
+.user-list .user-info h4{
+    margin: 0 0 10px
+}
+
+.user-list .user-info p{
+    font-size: small;
+}
+
+.user-list li:not(:last-of-type){           /* using this the porperty of the most bottom element is ignored and rest is applied*/
+    border-bottom: 1px solid #eee;
+}
+
+.user-list li.hide {                    /*in this we will inject hide in the list which are not present when searched*/
+    display: none;
+}
+

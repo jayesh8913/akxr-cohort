@@ -7,7 +7,43 @@
     <title>My Project</title>
   </head>
   <body>
-    <h1>Project Starter</h1>
+    <div class="container">
+
+        <header class="header">                                 <!-- you can write header.header for the same output-->
+            <h4 class="title"> live-user </h4>
+            <small class="subtitle">search locn and person</small>
+            <input type="text" id="filter" placeholder="search" >                    <!-- you can write input#filter for the same output-->
+        </header>
+
+        <ul id="result" class="user-list">  
+            <li>                                                                    <!--sample list to correct css files-->
+                <img src="https://randomuser.me/api/portraits/women/33.jpeg" alt="Sara">
+                <div class="user-info">
+                    <h4>sara smith</h4>
+                    <p>waxford, ireland</p>
+                </div>
+            </li>
+
+            <li>
+                <img src="https://randomuser.me/api/portraits/women/33.jpeg" alt="Sara">
+                <div class="user-info">
+                    <h4>sara smith</h4>
+                    <p>waxford, ireland</p>
+                </div>
+            </li>
+
+            <li>
+                <img src="https://randomuser.me/api/portraits/women/33.jpeg" alt="Sara">
+                <div class="user-info">
+                    <h4>sara smith</h4>
+                    <p>waxford, ireland</p>
+                </div>
+            </li>
+            
+            <li>loading ......</li>
+        </ul>
+
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
