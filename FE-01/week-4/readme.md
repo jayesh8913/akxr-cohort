@@ -1,0 +1,1 @@
+making a website like bolt which put your ideas to life with a single click 
