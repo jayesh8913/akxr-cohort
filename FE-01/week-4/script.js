@@ -7,7 +7,7 @@ const codeOutput = document.getElementById("codeOutput");
 button.addEventListener("click", async () => {
   const prompt = input.value.trim();
 
-  const res = await fetch("http://localhost:3000/generate", {
+  const res = await fetch("/generate", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ prompt })
