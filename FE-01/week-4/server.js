@@ -10,11 +10,8 @@ import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
-app.use(express.static(path.join(__dirname)));
-
-
 const app = express();
+app.use(express.static(path.join(__dirname)));
 
 app.use(cors());
 app.use(express.json());
