@@ -4,4 +4,4 @@ to run follow these steps:-
 1) npm install 
 2) add type:module to your package.json
 3) node server.js
-4) open html file in localhost:3000
+4) open html file in localhost:3000 in chrome
