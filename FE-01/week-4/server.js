@@ -33,7 +33,7 @@ app.post("/generate", async (req, res) => {
     const geminiResponse = await result.response;
     const html = geminiResponse.text();
 
-    console.log(html);           // server log
+    console.log(html);        
     return res.json({ html });   
   } catch (err) {
     console.error(err);
