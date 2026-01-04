@@ -1,0 +1,20 @@
+/*.error{
+    color: cornflowerblue;
+}
+
+p.success{
+    color: aquamarine;
+}
+
+p.success.feedback{
+    border: 1px dashed black;
+}
+#lols{
+    background-color: chartreuse;
+    padding: 20px;
+
+}*/
+a[href]{
+    background-color: darkolivegreen;
+    text-decoration: none;
+}
