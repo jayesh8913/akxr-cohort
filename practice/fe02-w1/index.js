@@ -1,4 +1,4 @@
-let user_obj = {
+/*let user_obj = {
     name:'bob',
     age:30,
     email:'bob@gmail.com',
@@ -37,20 +37,21 @@ console.log(Math.trunc(area));      // only the integer prt
 // all primitive types are stored in stack and the the reference types are stored in stacks and pointed towards heaps
 // when a copy is made of an var it does not change when the original copy is change but it is not the same for reference types as the copy of a reference type is also just a copy pointer from heap
 
-// map filter and reduce
-const arr =[5,3,7,0,3,7];
+// map filter and reduce*/
+const arr =[5,3,6,0,3,7];
 function double(x){
     return x*2;
 }
+
 const op= arr.map(double)
 
 const op_filter_even= arr.filter((x)=>{
-    return x%2===0
+    return x%2==0
 })
 
 const op_reduce_summation= arr.reduce(function(accumulator,current){
  accumulator=accumulator+current;
  return accumulator
 },0)                // this program is used to accumulate the whole array and in this case to calculate summation , the 0 in this is the initial value of the accumulator 
-
+console.log(op_reduce_summation)
 
