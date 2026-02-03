@@ -1,0 +1,45 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid gray;
+    border-radius: 5px;
+}
+
+.logo img{
+    width: 100px;
+    height: auto;
+}
+.nav_items ul {
+    display:flex;
+    font-size: large;
+}
+
+.nav_items ul li{
+    padding: 10px;
+    
+    list-style-type: none;
+}
+
+.res-card{
+    border-radius: 5px;
+    margin:5px;
+    padding: 5px;
+    width: 200px;
+    height:300px;
+   
+}
+.res-card img{
+   border-radius: 5px;
+}
+.res-card:hover{
+    cursor: pointer;
+    border:1px solid black;
+}
+.search {
+    padding: 10px;
+}
+
+.res-logo{
+width: 100%;
+
+}
