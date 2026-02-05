@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import RestaurentCard from "./RestaurentCard";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
   const [listofres, setlistofres] = useState([]);
@@ -16,7 +17,7 @@ const Body = () => {
     );
 
     const json = await data.json();
-
+      // optional chaining so that it does not break if the value is not present 
    const restaurants =json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
 
 
@@ -24,9 +25,10 @@ const Body = () => {
 
     setlistofres(restaurants || []);
   };
-  
 
-  return (
+  // condiional rendering 
+  // instead of putting this in if else operations , we can use terenary operator , so if listofres is 0 then shimmer ui will render
+  return listofres.length===0?(<Shimmer/>):(
     <div className="body">
       <div className="filter">
         <button

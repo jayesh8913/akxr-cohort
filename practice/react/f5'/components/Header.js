@@ -1,4 +1,8 @@
+import { useState } from "../node_modules/react";
+
+
 const Header = () => {
+  const [btn,setbtn]= useState('Login')
   return (
     <div className="header">
       <div className="logo-container">
@@ -13,6 +17,10 @@ const Header = () => {
           <li>About Us</li>
           <li>Contact Us</li>
           <li>Cart</li>
+          <button className="login-btn"
+           onClick={()=>{
+            btn==='Login'?setbtn('Logout'):setbtn('Login') // this uses terenary operation as well where if else statement is used
+           }}>{btn}</button>
         </ul>
       </div>
     </div>
