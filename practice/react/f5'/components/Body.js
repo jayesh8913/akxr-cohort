@@ -4,6 +4,9 @@ import Shimmer from "./Shimmer";
 
 const Body = () => {
   const [listofres, setlistofres] = useState([]);
+  const [filteredRestaurant, setFilteredRestaurant] = useState([]);
+  const [searchText, setSearchText] = useState("");
+
 
   useEffect(() => {
     fetchData();
@@ -24,6 +27,7 @@ const Body = () => {
     console.log(json.data.cards);
 
     setlistofres(restaurants || []);
+    setFilteredRestaurant(restaurants || [])
   };
 
   // condiional rendering 
@@ -41,10 +45,23 @@ const Body = () => {
         >
           Top Rated Restaurants
         </button>
+        <div className="search">
+          <input className="inputname" type="text"  value={searchText} onChange={(e) => {
+            setSearchText(e.target.value);
+              }}/>
+          <button className="inpbtn" onClick={()=>{
+            const filteredRestaurant=listofres.filter((res)=>{
+              return res.info.name.toLowerCase().includes(searchText.toLowerCase());
+
+            })
+            setFilteredRestaurant(filteredRestaurant);
+
+          }}>enter</button>
+        </div>
       </div>
 
       <div className="res-container">
-        {listofres.map((restaurant) => (
+        {filteredRestaurant.map((restaurant) => (
           <RestaurentCard
             key={restaurant?.info?.id}
             resData={restaurant?.info}
