@@ -1,4 +1,7 @@
-import { useState } from "../node_modules/react";
+import { useState, } from "../node_modules/react";
+import About from "./About";
+import Contact from "./Contact";
+import { Link } from "../node_modules/react-router-dom";
 
 
 const Header = () => {
@@ -13,9 +16,9 @@ const Header = () => {
       </div>
       <div className="nav-items">
         <ul>
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Contact Us</li>
+          <li><Link to={"/"}>Home</Link></li>
+          <li> <Link to={"/about"}>About us</Link> </li>
+          <li><Link to={"/contact"}>Contact Us</Link></li>
           <li>Cart</li>
           <button className="login-btn"
            onClick={()=>{
