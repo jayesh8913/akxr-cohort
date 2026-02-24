@@ -1,7 +1,7 @@
 const resList = [
   {
     type: "restaurant",
-    data: {
+    info: {
       type: "F",
       id: "334475",
       name: "KFC",

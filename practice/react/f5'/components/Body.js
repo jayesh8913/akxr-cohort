@@ -1,12 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "../node_modules/react";
 import RestaurentCard from "./RestaurentCard";
+import { Link } from "../node_modules/react-router-dom";
 import Shimmer from "./Shimmer";
 
 const Body = () => {
   const [listofres, setlistofres] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
-
+  
 
   useEffect(() => {
     fetchData();
@@ -16,12 +17,12 @@ const Body = () => {
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.6326695&lng=73.8220565&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      "https://foodfire.onrender.com/api/restaurants?lat=21.1702401&lng=72.83106070000001&page_type=DESKTOP_WEB_LISTING"
     );
 
     const json = await data.json();
       // optional chaining so that it does not break if the value is not present 
-   const restaurants =json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+   const restaurants = json?.data?.cards?.find((c) => c?.card?.card?.gridElements?.infoWithStyle?.restaurants)?.card?.card?.gridElements?.infoWithStyle?.restaurants;
 
 
     console.log(json.data.cards);
@@ -62,10 +63,13 @@ const Body = () => {
 
       <div className="res-container">
         {filteredRestaurant.map((restaurant) => (
-          <RestaurentCard
-            key={restaurant?.info?.id}
-            resData={restaurant?.info}
-          />
+            <Link
+    key={restaurant?.info?.id}
+    to={"/restaurants/" + restaurant?.info?.id}
+    style={{ textDecoration: "none", color: "inherit" }}
+  >
+    <RestaurentCard resData={restaurant?.info} />
+  </Link>
         ))}
       </div>
     </div>
