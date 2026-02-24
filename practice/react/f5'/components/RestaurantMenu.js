@@ -1,23 +1,12 @@
-import { useState, useEffect } from "../node_modules/react";
-import { useParams } from "../node_modules/react-dom";
 import Shimmer from "./Shimmer";
 import { useParams } from "../node_modules/react-router-dom";
+import useRestaurantMenu from "../utils/useRestaurantMenu";
+
 
 const RestaurantMenu = () => {
   const { resId } = useParams();                  
-  const [resInfo, setResInfo] = useState(null);
-
-  useEffect(() => {
-    fetchMenu();
-  }, []);
-
-  const fetchMenu = async () => {
-    const data = await fetch(
-      "https://foodfire.onrender.com/api/menu?page-type=REGULAR_MENU&complete-menu=true&lat=21.1702401&lng=72.83106070000001&submitAction=ENTER&restaurantId=" + resId   // ← dynamic ID
-    );
-    const json = await data.json();
-    setResInfo(json.data);
-  };
+ const resInfo = useRestaurantMenu(resId);
+ 
 
   if (!resInfo) return <Shimmer />;
 

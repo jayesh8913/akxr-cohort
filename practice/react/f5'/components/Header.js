@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useState } from "../node_modules/react";
+import { useState,Suspense } from "../node_modules/react";
 
 
 const Header = () => {
@@ -16,8 +16,9 @@ const Header = () => {
         <ul>
           <li>Home</li>
           <li><Link to="/about">About</Link></li>
-          <li>Contact Us</li>
+          <li><Link to="/contact">contact</Link></li>
           <li>Cart</li>
+          <li><Link to="/groceries">grocery</Link></li>
           <button className="login-btn"
            onClick={()=>{
             btn==='Login'?setbtn('Logout'):setbtn('Login') // this uses terenary operation as well where if else statement is used
