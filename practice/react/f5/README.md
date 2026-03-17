@@ -35,3 +35,12 @@
  *  - Address
  *  - Contact
  */
+
+
+# Redux Toolkit
+- npm i @reduxjs/toolkit and react-redux
+- build store
+- conntect store to app
+- slice 
+- dispatch (action)
+- selector (subscribe)
